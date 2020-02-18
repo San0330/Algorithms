@@ -1,4 +1,4 @@
-from queue import Queue
+from collections import deque
 
 if __name__ == "__main__":
     v, e = map(int, input().split())
@@ -6,22 +6,20 @@ if __name__ == "__main__":
     g = [[_] for _ in range(v)]
 
     for i in range(e):
-        src, dest = map(int, input().split())
-        src -= 1
-        dest -= 1
-        g[src].append(dest)
-        g[dest].append(src)
+        src, dest = map(int, input().split())       
+        g[src-1].append(dest-1)
+        g[dest-1].append(src-1)
 
-    q = Queue(v)
-    q.put(0)
+    q = deque([0])
     visited = [0]
 
-    while not q.empty():
-        top = q.get()
+    while len(q):
+        top = q.pop()
 
         print(top + 1, end=" ")
 
         for n in g[top]:
             if n not in visited:
                 visited.append(n)
-                q.put(n)
+                q.appendleft(n)
+    print()
