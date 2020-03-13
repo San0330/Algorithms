@@ -1,7 +1,6 @@
 # Brute-force solution to the rod-cutting problem
 import sys
 
-
 def rod_cutting(total, prices, lengths):
 
     if total <= 0:
