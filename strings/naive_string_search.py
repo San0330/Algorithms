@@ -19,5 +19,5 @@ if __name__ == "__main__":
 
         # if the while loop ends with all character of search string compared, then the match is found
         if j == m:
-            print(f"Found at index {i+1}")
+            print(f"Found at index {i+1}" )
 
