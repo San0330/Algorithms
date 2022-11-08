@@ -1,4 +1,4 @@
-# compoutes Longest Prefix Suffix array of pattern
+# computes Longest Proper Prefix which is also a Suffix (LPS) array of pattern
 def computeLPS(pat):
 
     n = len(pat)
